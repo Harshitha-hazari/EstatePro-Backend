@@ -1,3 +1,4 @@
+
 FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
@@ -9,4 +10,4 @@ RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -jar target/*.jar"]
+CMD ["sh", "-c", "java -jar $(find target -maxdepth 1 -type f -name '*.jar' ! -name '*.original' | head -n 1)"]
