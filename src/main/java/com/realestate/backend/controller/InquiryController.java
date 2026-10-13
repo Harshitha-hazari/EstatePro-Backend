@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/inquiries")
-@CrossOrigin(origins = "http://localhost:5173")
 public class InquiryController {
 
     private final InquiryRepository inquiryRepository;
